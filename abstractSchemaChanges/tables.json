@@ -1,0 +1,30 @@
+[
+	{
+		"name": "hhi_location",
+		"comment": "The \"location\" table contains Locations for the Inventory tracking system.",
+		"columns": [
+			{
+				"name": "hhi_location_id",
+				"comment": "Unique ID to identify each Location - used by the system",
+				"type": "bigint",
+				"options": { "unsigned": true, "notnull": true, "autoincrement": true }
+			},
+			{
+				"name": "hhi_location_key",
+				"comment": "A unique key to refer to a Location by - used by humans",
+				"type": "binary",
+				"options": { "length": 255 }
+			},
+			{
+				"name": "hhi_location_description",
+				"comment": "Long description of the Location",
+				"type": "blob",
+				"options": {}
+			}
+		],
+		"indexes": [
+			{ "name": "hhi_location_key", "columns": [ "hhi_location_key" ], "unique": true }
+		],
+		"pk": [ "hhi_location_id" ]
+	}
+]

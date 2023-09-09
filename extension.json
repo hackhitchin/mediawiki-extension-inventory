@@ -1,0 +1,76 @@
+{
+	"name": "HackHitchinInventory",
+	"author": [
+		"Your Name"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:HackHitchinInventory",
+	"descriptionmsg": "hackhitchininventory-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\HackHitchinInventory\\": "src/"
+	},
+	"config": {
+		"HackHitchinInventoryEnableFoo": {
+			"description": "Enable the Foo feature.",
+			"value": true
+		},
+		"HackHitchinInventoryVandalizeEachPage": {
+			"description": "Write 'HackHitchinInventory was here' on each page",
+			"value": false
+		}
+	},
+    "ExtensionMessagesFiles": {
+		"HackHitchinInventoryAlias": "HackHitchinInventory.i18n.alias.php"
+	},
+	"SpecialPages": {
+		"HackHitchinInventory": {
+			"class": "MediaWiki\\Extension\\HackHitchinInventory\\SpecialPages\\Special",
+			"services": [
+				"LocationService"
+			]
+		},
+		"HackHitchinInventory-Locations": {
+			"class": "MediaWiki\\Extension\\HackHitchinInventory\\SpecialPages\\Locations",
+			"services": []
+		}
+	},
+	"HookHandlers": {
+		"HackHitchinInventoryHooks": {
+			"class": "MediaWiki\\Extension\\HackHitchinInventory\\Hooks"
+		},
+		"HackHitchinInventoryParserHooks": {
+			"class": "MediaWiki\\Extension\\HackHitchinInventory\\Parsers\\ParserHooks",
+			"services": [
+				"LocationParser"
+			]
+		}
+	},
+	"Hooks": {
+		"BeforePageDisplay": "HackHitchinInventoryHooks",
+		"MediaWikiServices": "HackHitchinInventoryHooks",
+		"LoadExtensionSchemaUpdates": "HackHitchinInventoryHooks",
+		"ParserFirstCallInit": "HackHitchinInventoryParserHooks"
+	},
+	"MessagesDirs": {
+		"HackHitchinInventory": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.hackHitchinInventory": {
+			"localBasePath": "resources/ext.hackHitchinInventory",
+			"remoteExtPath": "HackHitchinInventory/resources/ext.hackHitchinInventory",
+			"dependencies": [],
+			"styles": [],
+			"packageFiles": [
+				"init.js"
+			],
+			"messages": []
+		}
+	},
+	"manifest_version": 2
+}

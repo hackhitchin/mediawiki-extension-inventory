@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"mgarratt"
+		]
+	},
+	"hackhitchininventory": "Hitchin Hackspace Inventory",
+	"hackhitchininventory-locations": "Locations",
+	"hackhitchininventory-desc": "This is an example extension",
+	"specialpages-group-inventory": "Inventoryyy"
+}
